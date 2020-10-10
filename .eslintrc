@@ -1,0 +1,54 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["react-app", "airbnb", "prettier", "prettier/react"],
+  "plugins": ["prettier", "react", "jsx-a11y"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "class-methods-use-this": 0,
+    "import/no-named-as-default": 0,
+    "import/no-cycle": 0,
+    "import/no-useless-path-segments": 0,
+    "import/prefer-default-export": 0,
+    "max-classes-per-file": [0, 1],
+    "react/destructuring-assignment": 1,
+    "react/jsx-props-no-spreading": 1,
+    "react/prop-types": 1,
+    "react/no-unused-state": 1,
+    "react/no-access-state-in-setstate": 1,
+    "no-unused-vars": 1,
+    "import/no-extraneous-dependencies": 1,
+    "no-continue": 0,
+    "no-prototype-builtins": 1,
+    "no-restricted-syntax": 1,
+    "no-unused-expressions": 1,
+    "no-param-reassign": 1,
+    "react/require-default-props": 1,
+    "jsx-a11y/label-has-associated-control": 1,
+    "jsx-a11y/no-noninteractive-element-interactions": 1
+  }
+}
