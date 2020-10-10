@@ -1,25 +1,29 @@
-import React, { Component } from "react";
+import React from 'react'
+import Footer from './FooterContent'
+import Icon from './FooterIcon'
 
-export default class FooterComponent extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return <div className="component footer" />;
-  }
+function FooterComponent() {
+    return (
+        <Footer>
+            <Footer.Wrapper>
+            <Footer.Row>
+                <Footer.Column>
+                <Footer.Title>About Us</Footer.Title>
+                    <Footer.Link href="#">Story</Footer.Link>
+                    <Footer.Link href="#">Clients</Footer.Link>
+                    <Footer.Link href="#">Testimonials</Footer.Link>
+                </Footer.Column>
+                <Footer.Column>
+                <Footer.Title>Social</Footer.Title>
+                    <Footer.Link href="#"><Icon className="fab fa-facebook-f" />Facebook</Footer.Link>
+                    <Footer.Link href="#"><Icon className="fab fa-instagram" />Instagram</Footer.Link>
+                    <Footer.Link href="#"><Icon className="fab fa-youtube" />Youtube</Footer.Link>
+                    <Footer.Link href="#"><Icon className="fab fa-twitter" />Twitter</Footer.Link>
+                </Footer.Column>
+            </Footer.Row>
+            </Footer.Wrapper>
+        </Footer>
+    )
 }
 
-// <footer
-//   style={{
-//     position: "absolute",
-//     bottom: "2%",
-//     width: "96%",
-//   }}
-// >
-//   <hr />
-//   <p className="text-muted">
-//     Created with love by Muhammad Kharisma Azhari
-//   </p>
-// </footer>
+export default FooterComponent;
