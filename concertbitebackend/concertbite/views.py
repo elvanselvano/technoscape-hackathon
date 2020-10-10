@@ -5,12 +5,16 @@ from .serializers import UserSerializer
 from .models import User
 from rest_framework.response import Response
 from django.views.decorators.http import require_http_methods
+import json
 
 # Create your views here.
 
 @require_http_methods(['POST'])
 def getUserDetail(request, username, password):
     users = User.objects.filter(username=username,
-                                password=password).values('Id', 'firstName', 'lastName', 'email', 'password')
+                                password=password).values('firstName', 'lastName', 'email')
     users = list(users)
-    return JsonResponse(users, safe = False)
+    return JsonResponse(status = 200, data = users)
+
+# def registerUser(request):
+#     user = User()
