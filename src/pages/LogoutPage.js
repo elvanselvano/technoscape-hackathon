@@ -1,17 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
-class LogoutComponent extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="container">
-        <h4>Thank you!</h4>
-      </div>
-    );
-  }
+function LougoutComponent() {
+  return (
+    <div className="container">
+      <h4>Thank you!</h4>
+    </div>
+  );
 }
-export default LogoutComponent;
+
+export default LougoutComponent;
