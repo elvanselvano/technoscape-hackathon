@@ -40,7 +40,7 @@ class RootRoute extends Component {
       <Router>
         <HeaderComponent />
         <Switch>
-          <AuthenticatedRoute path="/profile" component={ProfilePage} />
+          <Route path="/profile" component={ProfilePage} />
 
           <Route path="/auth/login" component={LoginPage} />
           <Route path="/auth/register" component={RegisterPage} />

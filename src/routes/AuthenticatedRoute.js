@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Redirect, withRouter } from "react-router-dom";
-import AuthService from "../utils/AuthSession";
+import AuthSession from "../utils/AuthSession";
 
 class AuthenticatedRoute extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class AuthenticatedRoute extends Component {
   }
 
   render() {
-    const isAuthenticated = AuthService.handleIsLoggedIn();
+    const isAuthenticated = AuthSession.handleIsLoggedIn();
 
     if (isAuthenticated) {
       return <Route {...this.props} />;

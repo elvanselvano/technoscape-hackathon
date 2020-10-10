@@ -37,7 +37,7 @@ class ProfileUpdateFormComponent extends Component {
                 </fieldset>
 
                 <ErrorMessage
-                  name="description"
+                  name="email"
                   component="div"
                   className="alert alert-warning"
                 />
