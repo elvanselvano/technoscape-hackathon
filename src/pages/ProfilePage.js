@@ -22,7 +22,7 @@ class ProfilePage extends Component {
   }
 
   componentDidMount() {
-    this.handleItemFetch();
+    // this.handleItemFetch();
   }
 
   handleItemFetch = () => {
@@ -32,8 +32,6 @@ class ProfilePage extends Component {
         console.log(res);
 
         this.setState({ itemValues: res.data });
-        const { id, username, email, password } = res.data;
-        AuthSession.handleLoginSucceed({ id, username, email, password });
       })
       .catch((err) => {
         console.log(err);
@@ -101,7 +99,7 @@ class ProfilePage extends Component {
             initialValues={itemValues}
             handleSubmit={this.handleSubmit}
             handleValidate={this.handleValidate}
-          />{" "}
+          />
         </div>
       </div>
     );

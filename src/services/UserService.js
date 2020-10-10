@@ -1,6 +1,5 @@
 import Axios from "axios";
 import AuthSession from "../utils/AuthSession";
-
 class UserService {
   apiURL = process.env.REACT_APP_API_URL;
 
