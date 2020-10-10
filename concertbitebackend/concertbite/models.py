@@ -6,9 +6,10 @@ class User(models.Model):
         ('M', 'Male'),
         ('F', 'Female')
     )
-    email = models.CharField(primary_key=True, max_length=100)
+    Id = models.UUIDField(primary_key=True)
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=100, blank=False)
     firstName = models.CharField(max_length=100)
     lastName = models.CharField(max_length=100)
     dateOfBirth = models.DateField()
     gender = models.CharField(max_length=1, choices=GENDERS)
-    
