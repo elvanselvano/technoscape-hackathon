@@ -1,18 +1,11 @@
-import React, { Component } from "react";
+import React from 'react'
 
-export default class HomePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchKeywords: "",
-    };
-  }
-
-  render() {
-    return (
-      <div className="home page container">
+function HomePage() {
+  return (
+    <div className="home page container">
         <h1>Home Page</h1>
       </div>
-    );
-  }
+  )
 }
+
+export default HomePage;
