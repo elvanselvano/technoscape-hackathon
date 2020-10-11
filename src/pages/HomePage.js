@@ -15,7 +15,7 @@ function HomePage() {
         <img src={Logo} />
       </div>
       <div className="greetingBox inline-block justify-content-center">
-        <h3>Welcome, {`${firstName} ${lastName}`} !</h3>
+        <h3>Welcome, {`${firstName} ${lastName}`}!</h3>
         <div className="justify-content-center center">
           <PlacesComponent />
         </div>
@@ -24,7 +24,7 @@ function HomePage() {
       <div className="items">
         <VideoPlayerComponent
           url="https://www.youtube.com/watch?v=DwDlR6FYw8w&ab_channel=SoundsFromTheCorner"
-          title="Raisa Live In Lapangan Banteng | Sounds From The Corner"
+          title="Raisa | Sounds From The Corner"
           description="Raisa Andriana, known by her mononym Raisa, is an Indonesian singer-songwriter. 
           She became publicly known for her song titled 'Serba Salah'."
         />
@@ -43,7 +43,7 @@ function HomePage() {
         />
         <VideoPlayerComponent
           url="https://www.youtube.com/watch?v=pjFX8lT9cew&ab_channel=BTSMAPOFTHESOULTOUR"
-          title="BTS | World Tour 'Love Yourself: Speak Yourself' - Japan Edition"
+          title="BTS | 'Love Yourself: Speak Yourself'"
           description="BTS, also known as the Bangtan Boys, is a seven-member South Korean boy band 
           that began formation in 2010 and debuted in 2013 under Big Hit Entertainment. 
           The septet—composed of RM, Jin, Suga, J-Hope, Jimin, V, and Jungkook—co-writes 

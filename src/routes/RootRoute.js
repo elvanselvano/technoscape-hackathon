@@ -14,8 +14,6 @@ import HeaderComponent from "../components/HeaderComponent";
 import FooterComponent from "../components/FooterComponent";
 
 import AuthSession from "../utils/AuthSession";
-import VideoPlayerComponent from "../components/VideoPlayerComponent";
-import "../components/styles/VideoPlayerStyle.css";
 
 class RootRoute extends Component {
   constructor(props) {
@@ -54,12 +52,10 @@ class RootRoute extends Component {
         <HeaderComponent />
         <Switch>
           <AuthenticatedRoute path="/profile" component={ProfilePage} />
-
           <Route path="/auth/login" component={LoginPage} />
           <Route path="/auth/register" component={RegisterPage} />
           <Route path="/auth" component={AuthPage} />
           <Route path="/logout" exact component={LogoutPage} />
-
           <AuthenticatedRoute path="/home" component={HomePage} />
           <AuthenticatedRoute path="/" component={HomePage} />
           <Route path="" component={ErrorPage} />
