@@ -1,0 +1,8 @@
+.items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  width: 1220px;
+  margin: 0 auto;
+  padding: 20px;
+}

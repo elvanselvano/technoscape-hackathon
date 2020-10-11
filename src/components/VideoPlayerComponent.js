@@ -1,13 +1,13 @@
-import React from 'react';
-import { Player } from 'video-react';
-import "node_modules/video-react/dist/video-react.css"; // import css
+import React from 'react'
+import ReactPlayer from 'react-player'
+import "./styles/VideoPlayerStyle.css"
 
-export default props => {
+function VideoPlayerComponent({url}) {
   return (
-    <Player
-      playsInline
-      poster="/assets/poster.png"
-      src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+    <ReactPlayer
+      url={url}
     />
-  );
-};
+  )
+}
+
+export default VideoPlayerComponent;

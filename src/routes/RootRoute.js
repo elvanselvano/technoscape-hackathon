@@ -14,6 +14,8 @@ import HeaderComponent from "../components/HeaderComponent";
 import FooterComponent from "../components/FooterComponent";
 
 import AuthSession from "../utils/AuthSession";
+import VideoPlayerComponent from '../components/VideoPlayerComponent';
+import "../components/styles/VideoPlayerStyle.css"
 
 class RootRoute extends Component {
   constructor(props) {
@@ -62,6 +64,17 @@ class RootRoute extends Component {
           <AuthenticatedRoute path="/" component={HomePage} />
           <Route path="" component={ErrorPage} />
         </Switch>
+        <div className="items">
+          <VideoPlayerComponent 
+            url="https://www.youtube.com/watch?v=f02mOEt11OQ&ab_channel=TheAMPChannel"
+          />
+          <VideoPlayerComponent 
+            url="https://www.youtube.com/watch?v=f02mOEt11OQ&ab_channel=TheAMPChannel"
+          />
+          <VideoPlayerComponent 
+            url="https://www.youtube.com/watch?v=f02mOEt11OQ&ab_channel=TheAMPChannel"
+          />
+        </div>
         <FooterComponent />
       </Router>
     );
