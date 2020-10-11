@@ -64,12 +64,6 @@ class RootRoute extends Component {
           <AuthenticatedRoute path="/" component={HomePage} />
           <Route path="" component={ErrorPage} />
         </Switch>
-        <div className="items">
-          <VideoPlayerComponent url="https://www.youtube.com/watch?v=f02mOEt11OQ&ab_channel=TheAMPChannel" />
-          <VideoPlayerComponent url="https://www.youtube.com/watch?v=f02mOEt11OQ&ab_channel=TheAMPChannel" />
-          <VideoPlayerComponent url="https://www.youtube.com/watch?v=f02mOEt11OQ&ab_channel=TheAMPChannel" />
-          <VideoPlayerComponent url="https://www.youtube.com/watch?v=f02mOEt11OQ&ab_channel=TheAMPChannel" />
-        </div>
         <FooterComponent />
       </Router>
     );

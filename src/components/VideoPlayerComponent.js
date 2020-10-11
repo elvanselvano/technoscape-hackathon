@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   },
 });
 
-function VideoPlayerComponent({ url }) {
+function VideoPlayerComponent({ title, description, url }) {
   const classes = useStyles();
 
   return (
@@ -31,10 +31,10 @@ function VideoPlayerComponent({ url }) {
         /> */}
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            DJ Karmeo is in the house!
+            {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Find the best music only at DJ Karmeo!
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>
