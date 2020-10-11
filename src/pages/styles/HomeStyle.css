@@ -1,0 +1,9 @@
+.home .imgContainer > img{
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+.home .greetingBox{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}

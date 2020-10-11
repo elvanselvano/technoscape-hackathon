@@ -26,8 +26,9 @@ class AuthService {
     });
   }
 
-  handleRegister({ username, email, password }) {
-    let reqURL = `${this.apiURL}auth/register/username=${username}&password=${password}&email=${email}`
+  handleRegister({ username, email, password, fullname }) {
+    fullname = fullname.replace(' ', '+')
+    let reqURL = `${this.apiURL}auth/register/username=${username}&password=${password}&email=${email}&fullname=${fullname}/`
     return Axios({
       method:"POST",
       url: reqURL
