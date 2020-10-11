@@ -21,17 +21,17 @@ class AuthService {
     //url building sample
     let reqURL = `${this.apiURL}auth/login/username=${username}&password=${password}/`;
     return Axios({
-      method:"POST",
-      url: reqURL
+      method: "POST",
+      url: reqURL,
     });
   }
 
-  handleRegister({ username, email, password, fullname }) {
-    fullname = fullname.replace(' ', '+')
-    let reqURL = `${this.apiURL}auth/register/username=${username}&password=${password}&email=${email}&fullname=${fullname}/`
+  handleRegister({ username, email, password, fullName }) {
+    fullName = fullName.replace(" ", "+");
+    let reqURL = `${this.apiURL}auth/register/username=${username}&password=${password}&email=${email}&fullname=${fullName}/`;
     return Axios({
-      method:"POST",
-      url: reqURL
+      method: "POST",
+      url: reqURL,
     });
   }
 }

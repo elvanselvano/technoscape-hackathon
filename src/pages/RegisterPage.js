@@ -6,21 +6,20 @@ class RegisterPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authValues: { username: "", email: "", password: "", fullname: "" },
+      authValues: { username: "", email: "", password: "", fullName: "" },
       isLoading: false,
     };
   }
 
   handleSubmit = (val) => {
-    const { username, email, password, fullname } = val;
+    const { username, email, password, fullName } = val;
 
     this.setState({ isLoading: true });
-    AuthService.handleRegister({ username, email, password, fullname })
+    AuthService.handleRegister({ username, email, password, fullName })
       .then((res) => {
-        if(res.data === "username or email is taken"){
+        if (res.data === "username or email is taken") {
           alert(res.data);
-        } 
-        else{
+        } else {
           this.props.history.replace("/auth/login");
           console.log(res);
         }
@@ -47,8 +46,8 @@ class RegisterPage extends Component {
       error.password = "Enter a proper password";
     }
 
-    if (!val.fullname) {
-      error.fullname = "Enter a proper Full Name";
+    if (!val.fullName) {
+      error.fullName = "Enter a proper Full Name";
     }
 
     return error;
@@ -87,15 +86,15 @@ class RegisterPage extends Component {
                 </fieldset>
 
                 <ErrorMessage
-                  name="fullname"
+                  name="fullName"
                   component="div"
                   className="alert alert-warning"
                 />
                 <fieldset className="mb-4">
-                  <label htmlFor="fullname">Full Name</label>
+                  <label htmlFor="fullName">Full Name</label>
                   <Field
-                    id="fullname"
-                    name="fullname"
+                    id="fullName"
+                    name="fullName"
                     type="text"
                     className="form-control"
                   />
