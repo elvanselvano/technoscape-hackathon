@@ -8,6 +8,9 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import ReactPlayer from "react-player";
+import RatingCardComponent from "./RatingCardComponent";
+import RatingTextFieldComponent from "./RatingTextFieldComponent";
+import RatingSliderComponent from "./RatingSliderComponent";
 
 const useStyles = makeStyles({
   root: {
@@ -22,13 +25,6 @@ function VideoPlayerComponent({ title, description, url }) {
     <Card className={classes.root}>
       <CardActionArea>
         <ReactPlayer url={url} />
-        {/* <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        /> */}
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {title}
@@ -38,6 +34,9 @@ function VideoPlayerComponent({ title, description, url }) {
           </Typography>
         </CardContent>
       </CardActionArea>
+      <RatingSliderComponent />
+      <RatingCardComponent />
+      <RatingTextFieldComponent />
       <CardActions>
         <Button size="small" color="primary">
           Share

@@ -16,10 +16,6 @@ function HomePage() {
         <img src={Logo} />
       </div>
 
-      <div className="greetingBox inline-block justify-content-center">
-        <h1>Stay tune, more exciting features are coming soon! :D</h1>
-      </div>
-
       <div className="items">
         <VideoPlayerComponent
           url="https://www.youtube.com/watch?v=DwDlR6FYw8w&ab_channel=SoundsFromTheCorner"
@@ -48,6 +44,10 @@ function HomePage() {
           The septet—composed of RM, Jin, Suga, J-Hope, Jimin, V, and Jungkook—co-writes 
           and co-produces much of their own output. "
         />
+      </div>
+
+      <div className="greetingBox inline-block justify-content-center">
+        <h1>Stay tune, more exciting features are coming soon! :D</h1>
       </div>
     </div>
   );
