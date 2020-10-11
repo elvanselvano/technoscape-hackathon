@@ -1,12 +1,9 @@
 import Axios from "axios";
 import AuthSession from "../utils/AuthSession";
+import * as consts from "../config/constants.js";
 
 class AuthService {
-  apiURL = process.env.REACT_APP_API_URL;
-
-  username = process.env.REACT_APP_AUTH_HEADER_USERNAME;
-
-  password = process.env.REACT_APP_AUTH_HEADER_PASSWORD;
+  apiURL = consts.API_BASE_URL;
 
   createBasicAuthToken(username, password) {
     return `Basic ${window.btoa(`${username}:${password}`)}`;
@@ -21,28 +18,19 @@ class AuthService {
   }
 
   handleLogin({ username, password }) {
-    return Axios.post(
-      `${this.apiURL}/auth/login`,
-      {
-        headers: {
-          authorization: this.createBasicAuthToken(
-            this.username,
-            this.password
-          ),
-        },
-      },
-      {
-        username,
-        password,
-      }
-    );
+    //url building sample
+    let reqURL = `${this.apiURL}auth/login/username=${username}&password=${password}/`;
+    return Axios({
+      method:"POST",
+      url: reqURL
+    });
   }
 
   handleRegister({ username, email, password }) {
-    return Axios.post(`${this.apiURL}/auth/register`, {
-      username,
-      email,
-      password,
+    let reqURL = `${this.apiURL}auth/register/username=${username}&password=${password}&email=${email}`
+    return Axios({
+      method:"POST",
+      url: reqURL
     });
   }
 }
