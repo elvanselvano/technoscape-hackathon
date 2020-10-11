@@ -1,8 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
-import FaceIcon from "@material-ui/icons/Face";
 import DoneIcon from "@material-ui/icons/Done";
 import AudiotrackIcon from "@material-ui/icons/Audiotrack";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
@@ -38,7 +36,8 @@ export default function OutlinedChips() {
         icon={<DuoIcon />}
         label="Video quality"
         clickable
-        color="primary"
+        color="secondary"
+        onClick={handleClick}
         onDelete={handleDelete}
         deleteIcon={<DoneIcon />}
         variant="outlined"
@@ -47,7 +46,8 @@ export default function OutlinedChips() {
         icon={<GraphicEqIcon />}
         label="Audio quality"
         clickable
-        color="primary"
+        color="secondary"
+        onClick={handleClick}
         onDelete={handleDelete}
         deleteIcon={<DoneIcon />}
         variant="outlined"
@@ -56,7 +56,8 @@ export default function OutlinedChips() {
         icon={<CameraAltIcon />}
         label="Camera works"
         clickable
-        color="primary"
+        color="secondary"
+        onClick={handleClick}
         onDelete={handleDelete}
         deleteIcon={<DoneIcon />}
         variant="outlined"
@@ -65,7 +66,8 @@ export default function OutlinedChips() {
         icon={<ExploreIcon />}
         label="Location"
         clickable
-        color="primary"
+        color="secondary"
+        onClick={handleClick}
         onDelete={handleDelete}
         deleteIcon={<DoneIcon />}
         variant="outlined"
@@ -74,7 +76,8 @@ export default function OutlinedChips() {
         icon={<AudiotrackIcon />}
         label="Vocal"
         clickable
-        color="primary"
+        color="secondary"
+        onClick={handleClick}
         onDelete={handleDelete}
         deleteIcon={<DoneIcon />}
         variant="outlined"

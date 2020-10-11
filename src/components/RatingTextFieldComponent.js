@@ -26,10 +26,11 @@ export default function MultilineTextFields() {
           id="outlined-multiline-static"
           label="Review Box"
           multiline
-          rows={4}
-          // defaultValue="Default Value"
+          rows={3}
           placeholder="Please write a review"
           variant="outlined"
+          color="secondary"
+          onChange={handleChange}
         />
       </div>
     </form>
