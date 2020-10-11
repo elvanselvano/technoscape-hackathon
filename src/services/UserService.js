@@ -1,6 +1,6 @@
 import Axios from "axios";
 import AuthSession from "../utils/AuthSession";
-import * as consts from "../config/constants.js";
+import * as consts from "../config/constants";
 class UserService {
   apiURL = consts.API_BASE_URL;
 
