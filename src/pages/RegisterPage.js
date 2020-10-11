@@ -17,8 +17,13 @@ class RegisterPage extends Component {
     this.setState({ isLoading: true });
     AuthService.handleRegister({ username, email, password })
       .then((res) => {
-        this.props.history.replace("/auth/login");
-        console.log(res);
+        if(res.data == "username or email is taken"){
+          alert(res.data);
+        } 
+        else{
+          this.props.history.replace("/auth/login");
+          console.log(res);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -102,7 +107,7 @@ class RegisterPage extends Component {
                   <Field
                     id="password"
                     name="password"
-                    type="text"
+                    type="password"
                     className="form-control"
                   />
                 </fieldset>

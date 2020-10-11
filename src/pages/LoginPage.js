@@ -25,12 +25,12 @@ class LoginPage extends Component {
       .then((res) => {
         console.log(res);
         if (res.status !== 200) return null;
-
-        const { id, username, email, password } = res.data;
-        AuthSession.handleLoginSucceed({ id, username, email, password });
-        this.forceUpdate();
-        this.props.history.replace("/home");
-        // window.open(`/home`, "_self");
+        if (res.status === 201 && res.data == "no user found"){
+          this.setState({ isError: true });
+        }
+        else{
+          this.props.history.replace("/home");
+        }
       })
       .catch((err) => {
         this.setState({ isError: true });
@@ -101,7 +101,7 @@ class LoginPage extends Component {
                   <Field
                     id="password"
                     name="password"
-                    type="text"
+                    type="password"
                     className="form-control"
                   />
                 </fieldset>
