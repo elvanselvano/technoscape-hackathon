@@ -24,12 +24,20 @@ class LoginPage extends Component {
     })
       .then((res) => {
         console.log(res);
-        if (res.status !== 200) return null;
-        if (res.status === 201 && res.data == "no user found"){
+        if (res.status === 201 && res.data === "no user found"){
           this.setState({ isError: true });
         }
         else{
-          this.props.history.replace("/home");
+          const { fullname, username, email, password } = {
+            fullname: res.data[0].firstName + " " + res.data[0].lastName,
+            username: val.username,
+            email: res.data[0].email,
+            password: val.password
+          };
+          AuthSession.handleLoginSucceed({ fullname, username, email, password });
+          this.forceUpdate();
+          alert("login success");
+          this.props.history.replace(`/home`);
         }
       })
       .catch((err) => {

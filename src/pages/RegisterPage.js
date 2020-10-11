@@ -6,18 +6,18 @@ class RegisterPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authValues: { username: "", email: "", password: "" },
+      authValues: { username: "", email: "", password: "", fullname: "" },
       isLoading: false,
     };
   }
 
   handleSubmit = (val) => {
-    const { username, email, password } = val;
+    const { username, email, password, fullname } = val;
 
     this.setState({ isLoading: true });
-    AuthService.handleRegister({ username, email, password })
+    AuthService.handleRegister({ username, email, password, fullname })
       .then((res) => {
-        if(res.data == "username or email is taken"){
+        if(res.data === "username or email is taken"){
           alert(res.data);
         } 
         else{
@@ -36,15 +36,19 @@ class RegisterPage extends Component {
   handleValidate = (val) => {
     const error = {};
     if (!val.username) {
-      error.username = "Enter a username";
+      error.username = "Enter a proper username";
     }
 
     if (!val.email) {
-      error.email = "Enter a email";
+      error.email = "Enter a proper email";
     }
 
     if (!val.password) {
-      error.password = "Enter a password";
+      error.password = "Enter a proper password";
+    }
+
+    if (!val.fullname) {
+      error.fullname = "Enter a proper Full Name";
     }
 
     return error;
@@ -83,6 +87,21 @@ class RegisterPage extends Component {
                 </fieldset>
 
                 <ErrorMessage
+                  name="fullname"
+                  component="div"
+                  className="alert alert-warning"
+                />
+                <fieldset className="mb-4">
+                  <label htmlFor="fullname">Full Name</label>
+                  <Field
+                    id="fullname"
+                    name="fullname"
+                    type="text"
+                    className="form-control"
+                  />
+                </fieldset>
+
+                <ErrorMessage
                   name="email"
                   component="div"
                   className="alert alert-warning"
@@ -92,7 +111,7 @@ class RegisterPage extends Component {
                   <Field
                     id="email"
                     name="email"
-                    type="text"
+                    type="email"
                     className="form-control "
                   />
                 </fieldset>
