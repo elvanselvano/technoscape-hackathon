@@ -20,40 +20,45 @@ class RootRoute extends Component {
     super(props);
     this.state = {
       isLoggedIn: false,
-      fullname: "",
+      fullName: "",
       username: "",
       email: "",
-      password: ""
+      password: "",
     };
   }
 
   componentDidMount() {
     if (AuthSession.handleIsLoggedIn()) {
-      const { fullname, username, email, password } = AuthSession.handleGetUser();
+      const {
+        fullName,
+        username,
+        email,
+        password,
+      } = AuthSession.handleGetUser();
       this.setState({
         isLoggedIn: true,
-        fullname: fullname,
+        fullName: fullName,
         username: username,
         email: email,
-        password: password
+        password: password,
       });
     }
   }
 
   render() {
-    const { fullname, username, email, password } = this.state;
+    const { fullName, username, email, password } = this.state;
     return (
       <Router>
         <HeaderComponent />
         <Switch>
-          <Route path="/profile" component={ProfilePage} />
+          <AuthenticatedRoute path="/profile" component={ProfilePage} />
 
           <Route path="/auth/login" component={LoginPage} />
           <Route path="/auth/register" component={RegisterPage} />
           <Route path="/auth" component={AuthPage} />
           <Route path="/logout" exact component={LogoutPage} />
 
-          <Route path="/home" component={HomePage} />
+          <AuthenticatedRoute path="/home" component={HomePage} />
           <AuthenticatedRoute path="/" component={HomePage} />
           <Route path="" component={ErrorPage} />
         </Switch>
