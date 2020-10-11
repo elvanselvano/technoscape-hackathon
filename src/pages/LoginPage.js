@@ -24,20 +24,23 @@ class LoginPage extends Component {
     })
       .then((res) => {
         console.log(res);
+
         if (res.status === 201 && res.data === "no user found") {
           this.setState({ isError: true });
         } else {
-          const { fullName, username, email, password } = {
-            fullName: res.data[0].firstName + " " + res.data[0].lastName,
+          const { username, email, password, firstName, lastName } = {
             username: val.username,
             email: res.data[0].email,
             password: val.password,
+            firstName: res.data[0].firstName,
+            lastName: res.data[0].lastName,
           };
           AuthSession.handleLoginSucceed({
-            fullName,
             username,
             email,
             password,
+            firstName,
+            lastName,
           });
           this.forceUpdate();
           alert("login success");
