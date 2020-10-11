@@ -4,6 +4,7 @@ import Logo from "../assets/logo.JPG";
 import "./styles/HomeStyle.css";
 import VideoPlayerComponent from "../components/VideoPlayerComponent";
 import PlacesComponent from "../components/PlacesComponent";
+import "../components/styles/VideoPlayerStyle.css";
 
 function HomePage() {
   const { firstName, lastName } = AuthSession.handleGetUser();
@@ -15,7 +16,9 @@ function HomePage() {
       </div>
       <div className="greetingBox inline-block justify-content-center">
         <h3>Welcome, {`${firstName} ${lastName}`} !</h3>
-        <PlacesComponent />
+        <div className="justify-content-center center">
+          <PlacesComponent />
+        </div>
       </div>
 
       <div className="items">
@@ -49,7 +52,7 @@ function HomePage() {
       </div>
 
       <div className="greetingBox inline-block justify-content-center">
-        <h1>Stay tune, more exciting features are coming soon! :D</h1>
+        <h1>Stay tune, more exciting features are coming soon!</h1>
       </div>
     </div>
   );

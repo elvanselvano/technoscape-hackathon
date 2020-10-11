@@ -24,7 +24,7 @@ function VideoPlayerComponent({ title, description, url }) {
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <ReactPlayer url={url} />
+        <ReactPlayer url={url} width="100%" height="360px" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {title}

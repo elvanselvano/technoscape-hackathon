@@ -1,8 +1,6 @@
 .items {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  width: 1200px;
+  gap: 30px;
   margin: 0 auto;
-  padding: 20px;
 }
