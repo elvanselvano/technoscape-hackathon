@@ -4,13 +4,12 @@ import Logo from "../assets/logo.JPG";
 import "./styles/HomeStyle.css";
 
 function HomePage() {
-  var sessionData = AuthSession.handleGetUser();
-  console.log(sessionData);
+  var { firstName, lastName } = AuthSession.handleGetUser();
 
   return (
     <div className="home page inline-block container justify-content-center">
       <div className="greetingBox inline-block justify-content-center">
-        <h1>Welcome, {sessionData.fullName} !</h1>
+        <h1>Welcome, {firstName + " " + lastName} !</h1>
       </div>
       <div className="imgContainer justify-content-center">
         <img src={Logo} />
