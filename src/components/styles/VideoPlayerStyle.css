@@ -4,3 +4,22 @@
   gap: 30px;
   margin: 0 auto;
 }
+
+.items-container {
+  background-color: black;
+}
+
+.buttons-wrapper {
+  /* background: red; */
+  overflow: auto;
+}
+
+.left-button {
+  float: left;
+  /* background: blue; */
+}
+
+.right-button {
+  /* background: green; */
+  float: right;
+}
