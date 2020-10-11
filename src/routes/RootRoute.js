@@ -20,22 +20,28 @@ class RootRoute extends Component {
     super(props);
     this.state = {
       isLoggedIn: false,
+      fullname: "",
       username: "",
+      email: "",
+      password: ""
     };
   }
 
   componentDidMount() {
     if (AuthSession.handleIsLoggedIn()) {
-      const { id, username, password } = AuthSession.handleGetUser();
+      const { fullname, username, email, password } = AuthSession.handleGetUser();
       this.setState({
         isLoggedIn: true,
-        username,
+        fullname: fullname,
+        username: username,
+        email: email,
+        password: password
       });
     }
   }
 
   render() {
-    const { username, isLoggedIn } = this.state;
+    const { fullname, username, email, password } = this.state;
     return (
       <Router>
         <HeaderComponent />
